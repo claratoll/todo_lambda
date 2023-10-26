@@ -1,8 +1,8 @@
 const { sendResponse } = require('../responses/sendResponse');
 
 function deleteTodo(todoId, todos) {
-  // Ta bort en todo
-  const index = todos.findIndex((todo) => todo.id === todoId);
+  const intID = parseInt(todoId);
+  const index = todos.findIndex((todo) => todo.id === intID);
 
   if (index !== -1) {
     todos.splice(index, 1);

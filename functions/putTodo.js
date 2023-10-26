@@ -1,9 +1,10 @@
 const { sendResponse } = require('../responses/sendResponse');
 
 function putTodo(id, todos) {
-  const todoToUpdate = todos.find((todo) => todo.id === id);
+  const intID = parseInt(id);
+  const todoToUpdate = todos.find((todo) => todo.id === intID);
 
-  if (!todoToUpdate.check) {
+  if (todoToUpdate) {
     todoToUpdate.check = true;
     return sendResponse(200, { message: 'Todo updated successfully' });
   } else {
